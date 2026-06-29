@@ -1,0 +1,24 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["Browncabinet"],
+  "name": "yourechoagent-mcp",
+  "description": "Event discovery + AI outreach for AI agents. Find conferences, webinars, meetups, podcasts, and communities in any niche, then draft personalized emails and comments — all from MCP. Tools: discover_events, draft_outreach_for_event, generate_comment_for_community, add_to_radar, hire_echo_agent.",
+  "homepage": "https://yourechoagent.com",
+  "repository": "https://github.com/Browncabinet/yourechoagent-mcp",
+  "license": "MIT",
+  "transports": ["stdio"],
+  "runtime": "docker",
+  "dockerfile": "Dockerfile",
+  "env": {
+    "ECHO_API_KEY": {
+      "description": "Echo Agent API key (prefix eak_). Get one at https://yourechoagent.com/for-agents/register",
+      "required": true,
+      "secret": true,
+      "placeholder": "eak_your_key_here"
+    },
+    "ECHO_API_BASE": {
+      "description": "Override API base URL (defaults to production).",
+      "required": false
+    }
+  }
+}
